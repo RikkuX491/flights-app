@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 
 import NavBar from './NavBar';
+import Header from './Header';
 
 function App() {
 
@@ -49,7 +50,7 @@ function App() {
   return (
     <div className="App">
       <NavBar/>
-      <h1>This is an app about Flights!</h1>
+      <Header/>
       <Outlet context={
         {
           flights: flights,
