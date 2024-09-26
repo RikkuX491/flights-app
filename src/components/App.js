@@ -25,8 +25,25 @@ function App() {
   }
 
   function addFlight(newFlight){
-    newFlight.id = flights[flights.length - 1].id + 1
-    setFlights([...flights, newFlight])
+    // newFlight.id = flights[flights.length - 1].id + 1
+    // setFlights([...flights, newFlight])
+
+    fetch("http://localhost:4000/flights", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify(newFlight)
+    })
+    .then(response => {
+      if(response.ok){
+        response.json().then(newFlightData => setFlights([...flights, newFlightData]))
+      }
+      else{
+        alert("Error: Unable to add new flight!");
+      }
+    })
   }
 
   return (

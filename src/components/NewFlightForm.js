@@ -14,6 +14,10 @@ function NewFlightForm(){
     function handleSubmit(event){
         event.preventDefault()
         addFlight(formData)
+        setFormData({
+            airline: "",
+            image: ""
+        })
     }
 
     function updateFormData(event){
