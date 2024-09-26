@@ -1,0 +1,12 @@
+{
+    "flights": [
+        {
+            "id": 1,
+            "airline": "Delta"
+        },
+        {
+            "id": 2,
+            "airline": "Emirates"
+        }
+    ]
+}
