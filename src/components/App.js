@@ -7,7 +7,6 @@ import { Outlet } from 'react-router-dom';
 function App() {
 
   const [flights, setFlights] = useState([]);
-  console.log(flights)
 
   useEffect(retrieveFlightsData, []);
 
@@ -26,7 +25,11 @@ function App() {
   return (
     <div className="App">
       <h1>This is an app about Flights!</h1>
-      <Outlet/>
+      <Outlet context={
+        {
+          flights: flights
+        }
+      }/>
     </div>
   );
 }
