@@ -24,13 +24,19 @@ function App() {
     })
   }
 
+  function addFlight(newFlight){
+    newFlight.id = flights[flights.length - 1].id + 1
+    setFlights([...flights, newFlight])
+  }
+
   return (
     <div className="App">
       <NavBar/>
       <h1>This is an app about Flights!</h1>
       <Outlet context={
         {
-          flights: flights
+          flights: flights,
+          addFlight: addFlight
         }
       }/>
     </div>
