@@ -1,4 +1,4 @@
-import { useOutletContext } from "react-router-dom";
+import { useOutletContext, useNavigate } from "react-router-dom";
 
 import { useState } from "react";
 
@@ -11,13 +11,16 @@ function NewFlightForm(){
 
     const {addFlight} = useOutletContext();
 
+    const navigate = useNavigate();
+
     function handleSubmit(event){
-        event.preventDefault()
-        addFlight(formData)
+        event.preventDefault();
+        addFlight(formData);
         setFormData({
             airline: "",
             image: ""
-        })
+        });
+        navigate('/');
     }
 
     function updateFormData(event){
