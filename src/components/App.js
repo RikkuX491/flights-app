@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 
 import { Outlet } from 'react-router-dom';
 
+import NavBar from './NavBar';
+
 function App() {
 
   const [flights, setFlights] = useState([]);
@@ -24,6 +26,7 @@ function App() {
 
   return (
     <div className="App">
+      <NavBar/>
       <h1>This is an app about Flights!</h1>
       <Outlet context={
         {
